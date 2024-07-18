@@ -1,0 +1,406 @@
+/* standing */
+.highlight-home  ,.highlight-home .table__cell--participant,.highlight-home .table__cell--rank{background:#33302A; color: #fff;}
+.highlight-away ,.highlight-away .table__cell--participant,.highlight-away .table__cell--rank{background: #33302A;color: #fff;}
+
+.tab-content .standings {
+  max-height: 508px;
+  overflow-x: auto;
+}
+#tab-home-recent .tab-over {
+  max-height: 485px;
+}
+.standings::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+  background-color: #f5f5f5;
+}
+
+.standings::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+  border-radius: 2.5px;
+}
+
+.standings::-webkit-scrollbar-thumb {
+  background-color: #44494f;
+  /* border: 2px solid #555555; */
+}
+
+.standings .subFilter {
+  align-items: flex-start;
+  column-gap: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  user-select: none;
+}
+.standings .subFilter__group {
+  column-gap: 8px;
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  justify-content: initial;
+  overflow-x: auto;
+  padding: 8px;
+}
+.tournamentTableDraw__subFilter .subFilter__group {
+  display: flex;
+  gap: 18px;
+}
+.tournamentTableDraw__subFilter .subFilter__group a {
+  display: flex;
+  padding: 10px 0px;
+  position: relative;
+}
+
+.tournamentTableDraw__subFilter button {
+  background: none;
+  border: 0px;
+  outline: none;
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 138.462% */
+  text-transform: uppercase;
+  padding: 0px;
+}
+.tournamentTableDraw__subFilter .subFilter__group a.active button {
+  color: #4fa747;
+}
+.tournamentTableDraw__subFilter .subFilter__group a.active::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  left: 0;
+  background: #4fa747;
+}
+.standings .tournamentTableMobileResolver {
+  align-self: center;
+  display: none;
+  justify-self: flex-end;
+  padding-right: 8px;
+}
+.standings .tournamentTableMobileResolver--open {
+  display: flex;
+}
+.standings .tableWrapper {
+  border-radius: 4px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+}
+
+.standings .tableWrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+.standings .ui-table {
+  display: grid;
+}
+.ui-table__header {
+  border-bottom: 1px solid #292b2e;
+  height: 38px;
+  user-select: none;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 32px 1fr 50px 50px 50px 50px 50px 50px 130px;
+}
+.ui-table__body {
+  display: grid;
+  grid-auto-rows: 45px;
+}
+.ui-table__row {
+  border-bottom: 1px solid #292b2e;
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 32px 1fr 50px 50px 50px 50px 50px 50px 130px;
+}
+.tournamentTableMobileResolver--show .ui-table__row {
+  grid-template-columns: 32px 1fr 36px 135px;
+}
+.tournamentTableMobileResolver--show .ui-table__header {
+  grid-template-columns: 32px 1fr 36px 135px;
+}
+.ui-table__headerCell {
+  align-items: center;
+  background-color: #001e28;
+  color: rgba(170, 170, 170, 1);
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* width: 32px; */
+  box-sizing: content-box;
+}
+.ui-table__headerCell[title="Wins"] {
+  color: rgba(1, 178, 67, 1);
+}
+.ui-table__headerCell[title="Draws"] {
+  color: rgba(125, 169, 255, 1);
+}
+.ui-table__headerCell[title="Losses"] {
+  color: rgba(231, 124, 124, 1);
+}
+.table__headerCell--rank {
+  background-color: #001e28;
+  left: 0;
+  position: sticky;
+  top: 0;
+  /* width: 32px; */
+  z-index: 1;
+}
+.table__headerCell--participant {
+  align-self: center;
+  display: flex;
+  /* flex: 1 0 100px; */
+  height: 100%;
+  justify-content: flex-start;
+  left: 34px;
+  line-height: 29px;
+  overflow: hidden;
+  padding: 0 10px;
+  position: sticky;
+  text-overflow: ellipsis;
+  top: 0;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 1;
+  padding-left: 0px;
+}
+.tableCellParticipant__name {
+  color: rgba(170, 170, 170, 1);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  max-width: 150px;
+}
+.tableCellParticipant__score:not(:empty) {
+  border-radius: 0.1875rem;
+  background: #26B783;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Be Vietnam Pro';
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem; /* 133.333% */
+  white-space: nowrap;
+  padding: 0.125rem 0.25rem;
+  position: absolute;
+  right: 0.4rem;
+  width: 1.875rem;
+}
+.liveScore--isWinning .tableCellParticipant__score{
+  background-color: #00a83f;
+  color: #fff;
+}
+.liveScore--isLosing .tableCellParticipant__score{
+  background-color: #dc0000;
+  color: #fff;
+}
+.liveScore--isDraw .tableCellParticipant__score {
+  background-color: #f3a000;
+  color: #fff;
+}
+.highlight-away.liveScore .tableCellParticipant__score {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.formIcon {
+  align-items: center;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  grid-area: liveIcon;
+  height: 20px;
+  justify-content: center;
+  justify-self: center;
+  /* margin: auto; */
+  overflow: hidden;
+  position: relative;
+  width: 20px;
+  text-transform: uppercase;
+}
+.formIcon--tbd {
+  background-color: #c8cdcd;
+}
+.formIcon--w,
+.formIcon--wl,
+.formIcon--wo,
+.formIcon--ww {
+  background-color: #00a83f;
+}
+.formIcon--d,
+.formIcon--dl,
+.formIcon--do,
+.formIcon--dw {
+  background-color: #f3a000;
+}
+.formIcon--l,
+.formIcon--ll,
+.formIcon--lo,
+.formIcon--lw {
+  background-color: #dc0000;
+}
+
+.table__cell {
+  align-items: center;
+  align-self: center;
+  color: rgba(170, 170, 170, 1);
+  display: flex;
+  height: 44px;
+  /* width: 32px; */
+  font-size: 0.85rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  box-sizing: content-box;
+}
+.table__cell--form {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 14px;
+  width: auto;
+}
+.table__headerCell--form {
+  width: auto;
+}
+.table__cell--rank {
+  justify-content: center;
+  left: 0;
+}
+.table__cell--participant,
+.table__cell--rank {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 1;
+  background-color: rgb(20 20 23);
+}
+.table__cell--participant {
+  /* background-color: #1c1e1f; */
+  flex-grow: 1;
+  flex-shrink: 0;
+  left: 40px;
+  padding: 0 10px;
+  /* max-width: 140px; */
+  width: auto;
+  padding-left: 0px;
+}
+.table__cell--value {
+  justify-content: center;
+}
+.table__cell--points {
+  color: rgba(170, 170, 170, 1);
+  font-weight: 700;
+}
+.table__cell--forAgainstPercentage,
+.table__cell--frames,
+.table__cell--goalsForAgainstDiff,
+.table__cell--netRunRate,
+.table__cell--pct,
+.table__cell--pointsDifference,
+.table__cell--score,
+.table__cell--sets {
+  /* width: 48px; */
+}
+.tableCellParticipant {
+  align-items: center;
+  display: flex;
+  padding-right: 10px;
+  width: 100%;
+}
+.tableCellRank {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  font-size: 0.75rem;
+  font-family: "Oswald";
+  font-weight: 700;
+  height: 1.375rem;
+  justify-content: center;
+  width: 1.375rem;
+}
+.tableCellParticipant__block {
+  align-items: center;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  left: -10px;
+}
+.tableCellParticipant__image {
+  display: flex;
+  margin-right: 0.5rem;
+}
+.tableCellParticipant__image > img {
+  height: 1.5rem;
+  width: 1.5rem;
+  object-fit: contain;
+}
+.tournamentTableDraw__subFilter {
+  background: #292b2e;
+  padding: 0px 0.938rem;
+}
+.tournamentTableMobileResolver {
+  align-items: center;
+}
+.tournamentTableMobileResolver__icon {
+  align-items: center;
+  border-radius: 8px;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  height: 1.75rem;
+  justify-content: center;
+  padding: 6px;
+  width: 1.75rem;
+}
+.tournamentTableMobileResolver__icon--selected,
+.tournamentTableMobileResolver__icon:hover {
+  background-color: #fff;
+  color: #000;
+}
+.tournamentTableMobileResolver--show .ui-table__header,
+.tournamentTableMobileResolver--show .ui-table__row {
+  justify-content: flex-start;
+}
+.tournamentTableMobileResolver--show .table__cell--participant {
+  max-width: 160px;
+}
+.tournamentTableMobileResolver--show .table__cell--participant .tableCellParticipant__name {width: 100%;}
+.LeagueStagePhases_row {
+  padding: 0px 12px;
+}
+@media screen and (max-width: 480px){
+  .ui-table__row {
+    grid-template-columns: 34px 1fr 32px 32px 32px 32px 35px 32px;
+  }
+  .ui-table__header {
+    grid-template-columns: 34px 1fr 32px 32px 32px 32px 35px 32px;
+  }
+  .ui-table__header--short {
+    grid-template-columns: 34px 1fr 32px 60px 32px;
+  }
+  .ui-table__row--short {
+    grid-template-columns: 34px 1fr 32px 60px 32px;
+   }
+   .tournamentTableMobileResolver--show .ui-table__row {
+   grid-template-columns: 34px 1fr 32px 32px 32px 32px 35px 32px 135px;
+  }
+  .tournamentTableMobileResolver--show .ui-table__header {
+   grid-template-columns: 34px 1fr 32px 32px 32px 32px 35px 32px 135px;
+  }
+}
+/* end standing */
