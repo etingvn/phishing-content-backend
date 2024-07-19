@@ -6,8 +6,14 @@
 - Thiết lập route trong file app.js
 - Như vậy mỗi một api từ backend server sẽ trả về một trang html content. Chúng ta sẽ đưa api này vào một thẻ iframe và nhúng nó vào template của Wordpress để phishing những nội dung cần thiết
 # II. How to run up project in local environment step by step:
-### Step 1: run docker environment
+### Case 1: run docker environment in  debug local
     npm run start
+### Case 2: run docker environment in no-debug local
+    make run
+### Case 3: run docker environment in no-debug local
+    make run
+### Case 4: run docker environment in production
+    make run
 # III. Output
 ### Api content:
     http://localhost/xoilaczkk-trang-chu

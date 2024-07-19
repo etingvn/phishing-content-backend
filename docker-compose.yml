@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  app:
+    image: phishing-content-backend
+    ports:
+      - '280:80' # Public HTTP Port
+      - '2443:443' # Public HTTPS Port
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+  
+  
